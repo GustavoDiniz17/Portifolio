@@ -21,10 +21,17 @@ function updateProfileInfo(profileData) {
     email.href = `mailto:${profileData.email}`
 }
 
+function updateSoftSkills(profileData){
+    const softSkills = document.getElementById('profile.skills.softSkills')
+
+    softSkills.innerHTML = profileData.skills.softSkills.map(skill => `<li>${skill}</li>`).join('')
+}
+
 (async () => {
     try {
         const profileData = await fetchProfileData()
         updateProfileInfo(profileData)
+        updateSoftSkills(profileData)
     } catch (error) {
         console.error('Erro ao carregar dados do perfil:', error)
         document.getElementById('profile-name').innerText = 'Erro ao carregar dados'
