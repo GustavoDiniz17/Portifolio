@@ -27,11 +27,18 @@ function updateSoftSkills(profileData){
     softSkills.innerHTML = profileData.skills.softSkills.map(skill => `<li>${skill}</li>`).join('')
 }
 
+function updateHardSkills(profileData){
+    const hardSkills = document.getElementById('profile.skills.harSkills')
+
+    hardSkills.innerHTML = profileData.skills.hardSkills.map(skill => `<li><img src="${skill.log}" alt="${skill.name}" title="${skill.name}"></li>`).join('')
+}
+
 (async () => {
     try {
         const profileData = await fetchProfileData()
         updateProfileInfo(profileData)
         updateSoftSkills(profileData)
+        updateHardSkills(profileData)
     } catch (error) {
         console.error('Erro ao carregar dados do perfil:', error)
         document.getElementById('profile-name').innerText = 'Erro ao carregar dados'
