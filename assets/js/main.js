@@ -39,6 +39,16 @@ function updateLanguages(profileData){
     languages.innerHTML = profileData.languages.map(languages => `<li>${languages}</li>`).join('')
 }
 
+function uptdatePortfolio(profileData){
+    const portfolio = document.getElementById('profile.portfolio')
+
+    portfolio.innerHTML = profileData.portfolio.map(project=>
+        `<li>
+            <span ${project.github ? 'class="title github"': "" }>${project.name}</span>
+            <a href="${project.url}" target="_blank">${project.url}</a>
+        </li> `).join('')
+}
+
 (async () => {
     try {
         const profileData = await fetchProfileData()
@@ -46,6 +56,7 @@ function updateLanguages(profileData){
         updateSoftSkills(profileData)
         updateHardSkills(profileData)
         updateLanguages(profileData)
+        uptdatePortfolio(profileData)
     } catch (error) {
         console.error('Erro ao carregar dados do perfil:', error)
         document.getElementById('profile-name').innerText = 'Erro ao carregar dados'
