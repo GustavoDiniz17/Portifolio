@@ -43,15 +43,21 @@
   ],
   "portfolio": [
     {
-      "name": "Curso Ministrado na DIO para a criação de uma Pokedex",
-      "url": "https://github.com/RenanJPaula/js-developer-pokedex",
+      "name": "APP do Tempo",
+      "url": "https://github.com/GustavoDiniz17/APP-do-Tempo",
       "github": true
     },
     {
-      "name": "Curso Ministrado na DIO para a criação de uma página de portfolio",
-      "url": "https://github.com/RenanJPaula/js-developer-portfolio",
+      "name": "Lista de Tarefas",
+      "url": "https://github.com/GustavoDiniz17/Lista-de-Tarefas",
+      "github": true
+    },
+    {
+      "name": "APP de Pokedex",
+      "url": "https://github.com/GustavoDiniz17/Criando-um-Projeto-com-HTML-CSS-para-Listagem-de-Pok-mon",
       "github": true
     }
+
   ],
   "professionalExperience": [
     {
