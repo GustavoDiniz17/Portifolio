@@ -48,6 +48,20 @@ function uptdatePortfolio(profileData){
             <a href="${project.url}" target="_blank">${project.url}</a>
         </li> `).join('')
 }
+        
+
+function updateProfessionalExperiences(profileData){
+    const professionalExperiences = document.getElementById("profile.professionalExperiences")
+
+    professionalExperiences.innerHTML = profileData.professionalExperiences.map(experience => {
+        return `
+        <li>
+            <h3 class="title">${experience.name}</h3>
+            <p class="period">${experience.period}</p>
+            <p>${experience.description}</p>
+        </li>`
+    }).join('')
+}
 
 (async () => {
     try {
@@ -57,6 +71,7 @@ function uptdatePortfolio(profileData){
         updateHardSkills(profileData)
         updateLanguages(profileData)
         uptdatePortfolio(profileData)
+        updateProfessionalExperiences(profileData)
     } catch (error) {
         console.error('Erro ao carregar dados do perfil:', error)
         document.getElementById('profile-name').innerText = 'Erro ao carregar dados'
